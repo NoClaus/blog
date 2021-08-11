@@ -1,0 +1,13 @@
+<% flash.each do |name, msg| %>
+  <% if name == "notice" %>
+  <div class="alert alert-success alert-dismissible d-block">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <%= content_tag :span, msg, id: "flash_#{name}" if msg.is_a?(String) %>
+  </div>
+  <% elsif name == "alert" %>
+  <div class="alert alert-warning alert-dismissible d-block">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <%= content_tag :span, msg, id: "flash_#{name}" if msg.is_a?(String) %>
+  </div>
+  <% end %>
+<% end %>
