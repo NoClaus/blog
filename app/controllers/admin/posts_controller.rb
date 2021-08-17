@@ -22,7 +22,7 @@ class Admin::PostsController < ApplicationController
 
   
   def show
-    @post = post.friendly.find(params[:id])
+    @post = find_post
     authorize([:admin, @post]) 
   end
   
@@ -61,6 +61,6 @@ class Admin::PostsController < ApplicationController
   end
   
   def find_post
-    @post = post.friendly.find(params[:id])
+    Post.friendly.find(params[:id])
   end
 end

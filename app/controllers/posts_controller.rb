@@ -5,6 +5,12 @@ class PostsController < ApplicationController
   end 
   
   def show
-    @post = post.friendly.find(params[:id])
+    @post = find_post
+  end
+  
+  private
+  
+  def find_post
+    Post.friendly.find(params[:id])
   end
 end

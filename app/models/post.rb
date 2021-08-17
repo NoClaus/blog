@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_one :user
+  belongs_to :user, foreign_key: 'user_id'
   validates :title,  presence: true, uniqueness: true
   validates :description, presence: true , length: { :minimum => 50}
   validates :thumbnail, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'],

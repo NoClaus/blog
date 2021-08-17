@@ -46,4 +46,8 @@ class ApplicationPolicy
       scope.all
     end
   end
+  
+  def user_admin?
+    user.has_role?(:admin)
+  end
 end

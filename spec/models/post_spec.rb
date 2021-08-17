@@ -2,18 +2,17 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   
-  def build_and_validate_post(*args)
-    post = build(:post, *args)
-    post.validate!
-    post
-  end
-  
-  # let(:user) { create(:user) }
-  # let!(:post) { create(:post, user: user) }
+  let(:user) {build_stubbed(:user) }
+  let(:post) { build_stubbed(:post, user: user) }
 
-  describe "validations" do
+  describe "validations" 
+  
+    it { is_expected.to belong_to(:user) }
     it { is_expected.to validate_attached_of(:thumbnail) }
     it { is_expected.to validate_content_type_of(:thumbnail).allowing('image/png', 'image/jpg', 'image/jpeg') }
     it { is_expected.to validate_size_of(:thumbnail).less_than(150.kilobytes) }
-  end
+    
+    it { is_expected.to validate_presence_of(:title) }
+    it { is_expected.to validate_presence_of(:description) }
+    # it { is_expected.to validate_length_of(:description).is_at_least(50) }
 end

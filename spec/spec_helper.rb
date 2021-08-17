@@ -5,6 +5,7 @@
 # files.
 #
 require 'active_storage_validations/matchers'
+require 'pundit/rspec'
 # require 'shoulda/matchers'
 # require 'shoulda/matchers/integrations/rspec'
 # Given that it is always loaded, you are encouraged to keep this file as
