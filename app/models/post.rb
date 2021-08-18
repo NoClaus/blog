@@ -6,7 +6,7 @@ class Post < ApplicationRecord
                         size: { less_than: 150.kilobytes , message: 'is not given between size' }
                         # dimension: { width: 1200, height: 639, message: 'has wrong image size' }
                         
-  has_rich_text :description
+  has_rich_text :content
   has_one_attached :thumbnail
   
   
