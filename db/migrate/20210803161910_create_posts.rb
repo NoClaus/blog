@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.text :description
       t.text :content
       t.string :state
-      t.belongs_to :user, foreign_key: true
+      t.belongs_to :user, index: true, foreign_key: true
       t.timestamps
     end
   end
