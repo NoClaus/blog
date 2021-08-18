@@ -13,8 +13,9 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
   
-  enum status: { draft: "Draft", published: "Published" }
-
+  enum state: [ :draft, :published ]
+  
+  scope :published, -> { where(state: :published)} 
 end
 
   
