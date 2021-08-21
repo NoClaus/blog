@@ -6,4 +6,8 @@ class User < ApplicationRecord
   rolify
   
   has_many :posts, dependent: :destroy
+  has_one :profile, dependent: :destroy
+  
+  
+  after_create :create_profile
 end
