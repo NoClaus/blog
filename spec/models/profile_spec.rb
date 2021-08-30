@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Profile, type: :model do
   let(:user) { create(:user, :admin) }
-  let(:profile) { build_stubbed(:profile, user: user) }
+  let(:profile) { user.profile }
   
   describe 'validations' do
     it { is_expected.to validate_attached_of(:avatar) }

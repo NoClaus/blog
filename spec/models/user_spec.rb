@@ -10,6 +10,7 @@ RSpec.describe User, type: :model do
   describe 'associations' do
     it { is_expected.to have_one(:profile).dependent(:destroy) }
     it { is_expected.to have_many(:posts) }
+    it { should have_many(:authorizations).dependent(:destroy) }
   end
   
   describe "profiles" do
@@ -18,6 +19,7 @@ RSpec.describe User, type: :model do
       expect(user.profile).to be_present
     end
   end
+  
 end
 
 

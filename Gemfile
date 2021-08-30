@@ -73,3 +73,6 @@ gem "mini_magick", ">= 4.9.5"
 gem "font-awesome-sass", "~> 5.15.1"
 gem "rolify", "~> 6.0" # Very simple Roles library
 gem "pundit", '~> 2.1' # Object oriented authorization for Rails applications
+gem "omniauth", "~> 2.0" # A generalized Rack framework for multiple-provider authentication
+gem "omniauth-facebook", "~> 8.0" # OmniAuth strategy for Facebook
+gem "omniauth-rails_csrf_protection", "~> 1.0" # Provides CSRF protection on OmniAuth request endpoint on Rails application.

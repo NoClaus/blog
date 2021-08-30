@@ -30,6 +30,8 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
@@ -45,10 +47,11 @@ RSpec.configure do |config|
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
-  # instead of true.
+  # instead of true
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include ActionText::SystemTestHelper, type: :system
+  config.include OmniauthHelpers
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
